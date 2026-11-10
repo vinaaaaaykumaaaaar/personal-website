@@ -9,7 +9,10 @@ describe('SocialLinks', () => {
     const github = screen.getByRole('link', { name: /github/i });
     const linkedin = screen.getByRole('link', { name: /linkedin/i });
 
-    expect(github).toHaveAttribute('href', 'https://github.com/v-shadowmaster');
+    expect(github).toHaveAttribute(
+      'href',
+      'https://github.com/vinaaaaaykumaaaaar'
+    );
     expect(linkedin).toHaveAttribute(
       'href',
       'https://linkedin.com/in/vinay-kumar-l'

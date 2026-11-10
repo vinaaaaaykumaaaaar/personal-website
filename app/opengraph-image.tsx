@@ -1,12 +1,11 @@
 import { ImageResponse } from 'next/og';
 import { siteConfig } from '@/lib/site';
 
-export const alt = 'Vinay Kumar L — Software Engineer - 1';
+export const alt = 'Vinay Kumar L — Software Engineer';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
-// Branded social card, generated on demand — left-aligned and dark to echo
-// the site's design language.
+// Branded social card, generated on demand in the site's editorial language.
 export default function OpengraphImage() {
   return new ImageResponse(
     (
@@ -16,43 +15,43 @@ export default function OpengraphImage() {
           height: '100%',
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'center',
+          justifyContent: 'space-between',
           alignItems: 'flex-start',
-          padding: '96px',
-          background: '#0a0a0a',
-          color: '#ededed',
+          padding: '64px',
+          background: '#ffffff',
+          color: '#1f2322',
         }}
       >
         <div
           style={{
             display: 'flex',
-            fontSize: 88,
-            fontWeight: 800,
-            letterSpacing: '-0.02em',
-            lineHeight: 1.05,
+            fontSize: 24,
+            fontWeight: 400,
+            letterSpacing: '-0.01em',
           }}
         >
-          VINAY KUMAR L
+          Vinay Kumar L · Software Engineer
         </div>
         <div
           style={{
             display: 'flex',
-            marginTop: 24,
-            fontSize: 46,
-            fontWeight: 700,
-            color: '#d4d4d4',
+            maxWidth: 920,
+            fontFamily: 'Georgia',
+            fontSize: 72,
+            fontWeight: 600,
+            letterSpacing: '-0.03em',
+            lineHeight: 1.08,
           }}
         >
-          Software Engineer - 1
+          I turn first principles into software that scales.
         </div>
         <div
           style={{
             display: 'flex',
-            marginTop: 36,
             maxWidth: 900,
-            fontSize: 28,
-            lineHeight: 1.45,
-            color: '#8a8a8a',
+            fontSize: 22,
+            lineHeight: 1.3,
+            color: '#585254',
           }}
         >
           {siteConfig.description}

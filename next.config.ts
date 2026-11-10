@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Keep the local preview clean; this has no effect on production builds.
+  devIndicators: false,
 };
 
 export default nextConfig;

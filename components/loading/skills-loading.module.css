@@ -1,0 +1,148 @@
+.content {
+  display: flex;
+  width: 100%;
+  max-width: 64rem;
+  flex-direction: column;
+  gap: var(--space-8xl);
+}
+
+.intro {
+  display: flex;
+  width: 100%;
+  max-width: 41rem;
+  flex-direction: column;
+  gap: calc(var(--text-default) * 1.9);
+}
+
+.copyLines {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.line {
+  border-radius: 2px;
+  background: var(--sand-100);
+  animation: pulse 1.8s ease-in-out infinite;
+}
+
+.heading {
+  width: min(100%, 18rem);
+  height: 25px;
+}
+
+.copy {
+  width: 100%;
+  height: 21px;
+}
+
+.copyShort {
+  width: 78%;
+  height: 21px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xl);
+}
+
+.sectionHeading,
+.sectionHeadingWide {
+  width: 6rem;
+  height: 25px;
+}
+
+.sectionHeadingWide {
+  width: 10rem;
+}
+
+.skillGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3xl);
+}
+
+.skillGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-reg);
+  padding-top: var(--space-reg);
+  border-top: 1px solid var(--line);
+}
+
+.label {
+  width: 8rem;
+  height: 12px;
+}
+
+.skillCopy,
+.skillCopyShort {
+  width: 100%;
+  height: 17px;
+}
+
+.skillCopyShort {
+  width: 64%;
+}
+
+.principles {
+  border-bottom: 1px solid var(--line);
+}
+
+.principle {
+  display: grid;
+  grid-template-columns: minmax(12rem, 0.8fr) minmax(0, 1.6fr);
+  gap: var(--space-3xl);
+  padding: var(--space-2xl) 0;
+  border-top: 1px solid var(--line);
+}
+
+.principleTitle {
+  width: 11rem;
+  height: 18px;
+}
+
+.principleCopy,
+.principleCopyShort {
+  width: 100%;
+  max-width: 34rem;
+  height: 17px;
+}
+
+.principleCopyShort {
+  width: 72%;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 48rem) {
+  .content {
+    gap: var(--space-6xl);
+  }
+
+  .skillGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .principle {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .line {
+    animation: none;
+  }
+}

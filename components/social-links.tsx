@@ -3,7 +3,7 @@ import { GithubIcon, LinkedinIcon } from '@/components/icons';
 const socials = [
   {
     label: 'GitHub',
-    href: 'https://github.com/v-shadowmaster',
+    href: 'https://github.com/vinaaaaaykumaaaaar',
     Icon: GithubIcon,
   },
   {

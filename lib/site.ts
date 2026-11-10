@@ -12,7 +12,7 @@ export const siteUrl = rawUrl.replace(/\/$/, '');
 
 export const siteConfig = {
   name: 'Vinay Kumar L',
-  title: 'Vinay Kumar L — Software Engineer - 1',
+  title: 'Vinay Kumar L — Software Engineer',
   description:
     'Software Engineer building scalable systems from first principles, sharpened by modern tools and human-AI collaboration.',
   url: siteUrl,

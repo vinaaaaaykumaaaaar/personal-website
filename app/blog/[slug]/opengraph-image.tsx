@@ -9,7 +9,7 @@ export function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
 }
 
-// Per-article social card with the post title.
+// Per-article social card with the post title, using the site's editorial palette.
 export default async function Image({
   params,
 }: {
@@ -28,31 +28,35 @@ export default async function Image({
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
-          padding: '96px',
-          background: '#0a0a0a',
-          color: '#ededed',
+          padding: '68px 76px',
+          background: '#ffffff',
+          color: '#1f2322',
+          borderTop: '10px solid #373735',
         }}
       >
         <div
           style={{
             display: 'flex',
-            fontSize: 24,
-            fontWeight: 600,
-            letterSpacing: '0.22em',
-            textTransform: 'uppercase',
-            color: '#8a8a8a',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            width: '100%',
+            fontSize: 22,
+            fontWeight: 400,
+            letterSpacing: '-0.01em',
           }}
         >
-          Blog
+          <span>Vinay Kumar L</span>
+          <span style={{ textDecoration: 'underline' }}>Blog</span>
         </div>
         <div
           style={{
             display: 'flex',
-            fontSize: 64,
-            fontWeight: 800,
-            lineHeight: 1.1,
-            letterSpacing: '-0.02em',
-            maxWidth: 1000,
+            fontFamily: 'Georgia, serif',
+            fontSize: 62,
+            fontWeight: 600,
+            lineHeight: 1.08,
+            letterSpacing: '-0.025em',
+            maxWidth: 1020,
           }}
         >
           {title}
@@ -60,12 +64,14 @@ export default async function Image({
         <div
           style={{
             display: 'flex',
-            fontSize: 28,
-            fontWeight: 600,
-            color: '#d4d4d4',
+            width: '100%',
+            paddingTop: 22,
+            borderTop: '2px solid rgba(31, 35, 34, 0.2)',
+            fontSize: 22,
+            fontWeight: 400,
           }}
         >
-          Vinay Kumar L · Software Engineer
+          Software Engineer · Documented insights &amp; learnings
         </div>
       </div>
     ),
