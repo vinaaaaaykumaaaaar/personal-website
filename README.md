@@ -1,6 +1,6 @@
 # VINAY KUMAR L
 
-**Software Engineer - 1**
+**Software Engineer**
 
 Building scalable systems from first principles — focused on what matters,<br/>and sharpened by modern tools and human-AI collaboration.
 
@@ -216,7 +216,7 @@ Optimized for [**Vercel**](https://vercel.com/new) — push the repo, import it,
 
 Designed & built by **Vinay Kumar L**
 
-[GitHub&nbsp;↗](https://github.com/v-shadowmaster)&nbsp;&nbsp;·&nbsp;&nbsp;[LinkedIn&nbsp;↗](https://linkedin.com/in/vinay-kumar-l)
+[GitHub&nbsp;↗](https://github.com/vinaaaaaykumaaaaar)&nbsp;&nbsp;·&nbsp;&nbsp;[LinkedIn&nbsp;↗](https://linkedin.com/in/vinay-kumar-l)
 
 <sub>One type scale · one rhythm · one design system.</sub>
 

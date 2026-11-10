@@ -1,0 +1,113 @@
+.content {
+  display: flex;
+  width: 100%;
+  max-width: 64rem;
+  flex-direction: column;
+  gap: var(--space-8xl);
+}
+
+.intro {
+  display: flex;
+  max-width: 41rem;
+  flex-direction: column;
+  gap: calc(var(--text-default) * 1.9);
+  font-family: var(--font-geist-serif), Georgia, 'Times New Roman', serif;
+  font-size: var(--text-default);
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.intro h1,
+.section h2 {
+  font: inherit;
+  font-weight: 600;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xl);
+}
+
+.section > h2 {
+  font-family: var(--font-geist-serif), Georgia, 'Times New Roman', serif;
+  font-size: var(--text-default);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.skillGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3xl);
+}
+
+.skillGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-reg);
+  padding-top: var(--space-reg);
+  border-top: 1px solid var(--line);
+}
+
+.skillGroup:hover,
+.principle:hover {
+  transform: none;
+}
+
+.skillGroup h3 {
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.skillGroup p {
+  font-family: var(--font-geist-serif), Georgia, 'Times New Roman', serif;
+  font-size: 20px;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+.principleList {
+  border-bottom: 1px solid var(--line);
+}
+
+.principle {
+  display: grid;
+  grid-template-columns: minmax(12rem, 0.8fr) minmax(0, 1.6fr);
+  gap: var(--space-3xl);
+  padding: var(--space-2xl) 0;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-geist-serif), Georgia, 'Times New Roman', serif;
+  font-size: 20px;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+.principle h3 {
+  font: inherit;
+  font-weight: 600;
+}
+
+.principle p {
+  max-width: 41rem;
+}
+
+@media (max-width: 48rem) {
+  .content {
+    gap: var(--space-6xl);
+  }
+
+  .skillGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .principle {
+    grid-template-columns: 1fr;
+    gap: var(--space-sml, 12px);
+  }
+}

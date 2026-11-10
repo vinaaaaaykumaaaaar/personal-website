@@ -1,8 +1,7 @@
 import Link from 'next/link';
-import { ThemeToggle } from '@/components/theme-toggle';
-import { SocialLinks } from '@/components/social-links';
-import { ArrowUpRight } from 'lucide-react';
+import { EditorialShell } from '@/components/editorial-shell';
 import { siteUrl } from '@/lib/site';
+import styles from './page.module.css';
 
 const personJsonLd = {
   '@context': 'https://schema.org',
@@ -11,65 +10,78 @@ const personJsonLd = {
   jobTitle: 'Software Engineer',
   url: siteUrl,
   sameAs: [
-    'https://github.com/v-shadowmaster',
+    'https://github.com/vinaaaaaykumaaaaar',
     'https://linkedin.com/in/vinay-kumar-l',
   ],
 };
 
 export default function Home() {
   return (
-    <div className="relative flex min-h-screen items-center px-6 py-20 sm:px-10 md:px-16 font-[family-name:var(--font-geist-sans)]">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
-        />
-        <ThemeToggle />
-        {/* Centered column, nudged a hair left of center on larger screens.
-            Tune the lean with the lg:-translate-x value (larger = more left). */}
-        <main className="mx-auto w-full max-w-2xl lg:-translate-x-8">
-          <div className="flex w-full flex-col items-start gap-12">
-            <div className="w-full space-y-6">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+      />
+
+      <EditorialShell>
+        <div className={styles.intro}>
+          <h1>I turn first principles into software that scales.</h1>
+
+          <p>
+            I&apos;m Vinay Kumar L, a software engineer focused on reliable
+            systems, modern tools, and thoughtful human‑AI collaboration.
+          </p>
+
+          <p>
+            Explore my{' '}
+            <Link href="/skills" className={styles.task}>
+              skills
+            </Link>, read{' '}
+            <Link href="/blog" className={styles.task}>
+              documented insights &amp; learnings
+            </Link>, view my{' '}
+            <Link href="/resume" className={styles.task}>
+              résumé
+            </Link>, or connect with me on{' '}
             <a
-              href="https://twitter.com/vinaykumar"
+              href="https://github.com/vinaaaaaykumaaaaar"
+              className={styles.task}
               target="_blank"
               rel="noopener noreferrer"
-              className="group block transition-opacity duration-300 ease-in-out hover:opacity-80 focus:opacity-80 focus:outline-none"
             >
-              <div className="flex items-center gap-3">
-                <h1 className="text-main-heading font-bold leading-tight brand-name-spacing font-[family-name:var(--font-circularStd-Light)]">
-                  VINAY KUMAR L
-                </h1>
-                <ArrowUpRight className="h-5 w-5 -translate-x-1 text-gray-600 opacity-0 transition-all duration-300 ease-in-out group-hover:translate-x-0 group-hover:opacity-100 dark:text-gray-400 sm:h-6 sm:w-6" />
-              </div>
+              GitHub
+            </a>{' '}
+            and{' '}
+            <a
+              href="https://linkedin.com/in/vinay-kumar-l"
+              className={styles.task}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
             </a>
+            .
+          </p>
 
-            <div className="space-y-6">
-              <Link href="/skills" className="group block w-fit">
-                <div className="flex items-center gap-3">
-                  <h2 className="text-main-heading font-bold leading-tight transition-opacity duration-300 ease-in-out group-hover:opacity-80">
-                    Software Engineer - 1
-                  </h2>
-                  <ArrowUpRight className="h-5 w-5 -translate-x-1 text-gray-600 opacity-0 transition-all duration-300 ease-in-out group-hover:translate-x-0 group-hover:opacity-100 dark:text-gray-400 sm:h-6 sm:w-6" />
-                </div>
-              </Link>
-
-              <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-400">
-                Building scalable systems from first principles — focused on
-                what matters, sharpened by modern tools and human‑AI
-                collaboration. Read the work:{' '}
-                <Link
-                  href="/blog"
-                  className="font-semibold text-black underline-offset-4 hover:underline dark:text-white"
-                >
-                  documented insights &amp; learnings
-                </Link>
-              </p>
-            </div>
-            </div>
-
-            <SocialLinks />
-          </div>
-        </main>
-      </div>
+          <Link href="/blog" className={styles.cta}>
+            <span className={styles.ctaLabel}>Read the work</span>
+            <span className={styles.ctaChevron} aria-hidden="true">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M9.5 18.25 15.75 12 9.5 5.75" />
+              </svg>
+            </span>
+          </Link>
+        </div>
+      </EditorialShell>
+    </>
   );
 }

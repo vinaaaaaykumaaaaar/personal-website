@@ -1,0 +1,287 @@
+.resumePage {
+  display: flex;
+  width: 100%;
+  max-width: 72rem;
+  flex-direction: column;
+  gap: var(--space-6xl);
+}
+
+.intro {
+  display: flex;
+  max-width: 41rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3xl);
+  font-family: var(--font-geist-serif), Georgia, 'Times New Roman', serif;
+  font-size: var(--text-default);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.introCopy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+}
+
+.intro h1 {
+  font: inherit;
+  font-weight: 600;
+}
+
+.intro p {
+  font: inherit;
+  font-weight: 400;
+}
+
+.brushLink {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.1em;
+  color: inherit;
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.brushLink > span:first-child {
+  position: relative;
+  isolation: isolate;
+}
+
+.brushLink > span:first-child::before {
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  bottom: 0.13em;
+  left: 0;
+  height: 0.42em;
+  background: color-mix(in srgb, var(--sand-400) 33%, var(--sand-100));
+  clip-path: polygon(1% 18%, 99% 2%, 100% 78%, 3% 100%, 0 56%);
+  content: '';
+  scale: 1.05;
+  transition: background-color 150ms ease;
+}
+
+.brushLink:hover > span:first-child::before {
+  background: color-mix(in srgb, var(--sand-400) 67%, var(--sand-100));
+}
+
+.chevron {
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.9em;
+  font-weight: 400;
+}
+
+.viewer {
+  width: 100%;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.viewerToolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2xl);
+  padding: var(--space-reg) 0;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 13px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.viewerActions,
+.fallbackActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2xl);
+}
+
+.textLink,
+.viewerActions a,
+.fallbackActions a,
+.recovery button,
+.recovery a {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-decoration-line: underline;
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+  cursor: pointer;
+}
+
+.textLink:hover,
+.viewerActions a:hover,
+.fallbackActions a:hover,
+.recovery button:hover,
+.recovery a:hover {
+  text-decoration-thickness: 2px;
+}
+
+.pdfSurface {
+  width: 100%;
+  padding: var(--space-xl) 0;
+  overflow: auto;
+}
+
+.pdfFrame {
+  display: block;
+  width: 100%;
+  height: min(800px, calc(100dvh - 12rem));
+  min-height: 32rem;
+  border: 1px solid var(--line);
+  background: var(--sand-100);
+}
+
+.loadingFrame {
+  display: grid;
+  width: 100%;
+  height: min(800px, calc(100dvh - 12rem));
+  min-height: 32rem;
+  place-items: center;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.spinner {
+  width: 26px;
+  height: 26px;
+  border: 1px solid var(--line);
+  border-top-color: var(--ink);
+  border-radius: 50%;
+  animation: spin 800ms linear infinite;
+}
+
+@keyframes spin {
+  to {
+    rotate: 1turn;
+  }
+}
+
+.recovery {
+  padding: 0 0 var(--space-xl);
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+.fallbackFrame {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4xl);
+  padding: var(--space-xl) 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.notice {
+  display: flex;
+  max-width: 41rem;
+  align-items: flex-start;
+  gap: var(--space-sml, 12px);
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+.noticeMark {
+  flex: none;
+  font-family: var(--font-geist-serif), Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.fallbackActions {
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 13px;
+  line-height: 1.2;
+}
+
+.loadingPage {
+  display: flex;
+  width: 100%;
+  max-width: 72rem;
+  flex-direction: column;
+  gap: var(--space-6xl);
+}
+
+.loadingIntro {
+  display: flex;
+  max-width: 41rem;
+  flex-direction: column;
+  gap: var(--space-2xl);
+}
+
+.skeletonLine,
+.skeletonTitle,
+.skeletonAction,
+.skeletonViewer {
+  display: block;
+  background: var(--sand-100);
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+.skeletonTitle {
+  width: 9rem;
+  height: 1.6rem;
+}
+
+.skeletonLine {
+  width: min(100%, 35rem);
+  height: 1rem;
+}
+
+.skeletonAction {
+  width: 7rem;
+  height: 0.9rem;
+}
+
+.skeletonViewer {
+  width: 100%;
+  height: min(800px, calc(100dvh - 12rem));
+  min-height: 32rem;
+  border: 1px solid var(--line);
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 48rem) {
+  .viewerToolbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .pdfFrame,
+  .loadingFrame,
+  .skeletonViewer {
+    min-height: 28rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner,
+  .skeletonLine,
+  .skeletonTitle,
+  .skeletonAction,
+  .skeletonViewer {
+    animation: none;
+  }
+}

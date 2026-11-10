@@ -1,8 +1,6 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
-import { ThemeToggle } from '@/components/theme-toggle';
-import { SocialLinks } from '@/components/social-links';
-import { ArrowUpRight } from 'lucide-react';
+import { EditorialShell } from '@/components/editorial-shell';
+import styles from './skills.module.css';
 
 export const metadata: Metadata = {
   title: 'Skills',
@@ -23,7 +21,7 @@ const skillGroups = [
     title: 'Tools & Platforms',
     skills: ['Docker', 'AWS', 'Vercel', 'Git', 'GitHub Actions'],
   },
-];
+] as const;
 
 const principles = [
   {
@@ -46,76 +44,45 @@ const principles = [
     description:
       'Prioritizing features and solutions that deliver real value, avoiding over-engineering and feature bloat.',
   },
-];
+] as const;
 
 export default function SkillsPage() {
   return (
-    <div className="relative min-h-screen px-6 py-20 sm:px-10 md:px-16 font-[family-name:var(--font-geist-sans)]">
-        <ThemeToggle />
-        <main className="mx-auto flex w-full max-w-4xl flex-col items-start gap-12 lg:-translate-x-8">
-          <div className="flex flex-col gap-6">
-            <Link
-              href="/"
-              className="group block w-fit transition-opacity duration-300 ease-in-out hover:opacity-80 focus:opacity-80 focus:outline-none"
-            >
-              <div className="flex items-center gap-3">
-                <span className="text-main-heading font-bold leading-tight brand-name-spacing font-[family-name:var(--font-circularStd-Light)]">
-                  VINAY KUMAR L
-                </span>
-                <ArrowUpRight className="h-5 w-5 -translate-x-1 text-gray-600 opacity-0 transition-all duration-300 ease-in-out group-hover:translate-x-0 group-hover:opacity-100 dark:text-gray-400 sm:h-6 sm:w-6" />
-              </div>
-            </Link>
-            <div className="space-y-6">
-              <h1 className="text-main-heading font-bold leading-tight">
-                Software Engineer - 1
-              </h1>
-              <p className="max-w-2xl text-lg leading-relaxed text-gray-600 dark:text-gray-400">
-                The tools I reach for, and the principles I hold them to.
-                Chosen because they ship reliable, scalable software — not
-                because they trend.
-              </p>
-            </div>
+    <EditorialShell>
+      <div className={styles.content}>
+        <header className={styles.intro}>
+          <h1>Tools, systems, and sound judgment.</h1>
+          <p>
+            The tools I reach for, and the principles I hold them to. Chosen
+            because they ship reliable, scalable software — not because they
+            trend.
+          </p>
+        </header>
+
+        <section className={styles.section} aria-labelledby="toolkit-heading">
+          <h2 id="toolkit-heading">Toolkit</h2>
+          <div className={styles.skillGrid}>
+            {skillGroups.map((group) => (
+              <article key={group.title} className={styles.skillGroup}>
+                <h3>{group.title}</h3>
+                <p>{group.skills.join(', ')}</p>
+              </article>
+            ))}
           </div>
+        </section>
 
-          <div className="w-full space-y-12">
-            <div className="space-y-8">
-              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Toolkit</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-                {skillGroups.map((group) => (
-                  <div key={group.title} className="space-y-6">
-                    <h3 className="text-xl font-semibold">{group.title}</h3>
-                    <div className="flex flex-wrap gap-2">
-                      {group.skills.map((skill) => (
-                        <span
-                          key={skill}
-                          className="rounded-full bg-muted px-3 py-1 text-sm font-medium skill-tag"
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="space-y-8">
-              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Core Principles</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {principles.map((principle) => (
-                  <div key={principle.title} className="space-y-4">
-                    <h3 className="text-xl font-semibold">{principle.title}</h3>
-                    <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-400">
-                      {principle.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
+        <section className={styles.section} aria-labelledby="principles-heading">
+          <h2 id="principles-heading">Core Principles</h2>
+          <div className={styles.principleList}>
+            {principles.map((principle) => (
+              <article key={principle.title} className={styles.principle}>
+                <h3>{principle.title}</h3>
+                <p>{principle.description}</p>
+              </article>
+            ))}
           </div>
-
-          <SocialLinks />
-        </main>
+        </section>
       </div>
+    </EditorialShell>
   );
 }
